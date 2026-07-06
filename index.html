@@ -32,6 +32,7 @@
 
   --container: 1240px;
   --radius: 2px;
+  --btn-radius: 999px;
   --ease: cubic-bezier(.22,.68,.31,1);
 }
 
@@ -108,7 +109,7 @@ h3.h-sub{ font-size:clamp(20px,2.4vw,26px); line-height:1.25; }
   font-weight:700;
   letter-spacing:0.04em;
   text-transform:uppercase;
-  border-radius:var(--radius);
+  border-radius:var(--btn-radius);
   transition:transform .35s var(--ease), background .3s ease, color .3s ease, border-color .3s ease, box-shadow .3s ease;
   white-space:nowrap;
 }
@@ -570,6 +571,34 @@ h3.h-sub{ font-size:clamp(20px,2.4vw,26px); line-height:1.25; }
 .team-card span{ font-size:12.5px; text-transform:uppercase; letter-spacing:0.05em; color:var(--brass); font-weight:700; }
 
 /* ============================================================
+   ABOUT (Home) — simple circular photo + inline stats
+   ============================================================ */
+.about-simple-grid{ display:grid; grid-template-columns:0.85fr 1.15fr; gap:64px; align-items:center; }
+@media (max-width:900px){ .about-simple-grid{ grid-template-columns:1fr; gap:44px; } }
+.about-simple-media{ position:relative; max-width:420px; }
+@media (max-width:900px){ .about-simple-media{ margin:0 auto; } }
+.about-simple-photo{
+  width:100%; aspect-ratio:1; object-fit:cover; border-radius:50%;
+  box-shadow:0 30px 60px -30px rgba(0,0,0,.35);
+}
+.about-simple-badge{
+  position:absolute; bottom:4%; left:-10%; width:128px; height:128px; border-radius:50%;
+  background:var(--emerald-deep); color:var(--brass-light);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+  box-shadow:0 20px 44px -18px rgba(0,0,0,.55); border:1px solid rgba(211,176,118,0.25);
+}
+@media (max-width:480px){ .about-simple-badge{ width:100px; height:100px; left:-4%; bottom:2%; } }
+.about-simple-badge .asb-num{ font-family:var(--serif); font-size:32px; line-height:1; }
+@media (max-width:480px){ .about-simple-badge .asb-num{ font-size:24px; } }
+.about-simple-badge .asb-label{ font-size:10.5px; letter-spacing:0.04em; text-transform:uppercase; margin-top:6px; opacity:0.85; line-height:1.35; }
+
+.simple-stats{ display:flex; flex-wrap:wrap; gap:40px; margin-top:36px; }
+@media (max-width:560px){ .simple-stats{ gap:28px; margin-top:28px; } }
+.simple-stat b{ display:block; font-family:var(--serif); font-size:32px; color:var(--mahogany); line-height:1; }
+@media (max-width:480px){ .simple-stat b{ font-size:25px; } }
+.simple-stat span{ display:block; font-size:12.5px; opacity:0.65; margin-top:7px; text-transform:uppercase; letter-spacing:0.03em; }
+
+/* ============================================================
    FEATURED (Home) — intro + image collage
    ============================================================ */
 .featured-grid{ display:grid; grid-template-columns:0.85fr 1.15fr; gap:64px; align-items:center; }
@@ -675,7 +704,7 @@ h3.h-sub{ font-size:clamp(20px,2.4vw,26px); line-height:1.25; }
 
 <section class="hero" style="background-image:url('https://i.pinimg.com/1200x/68/1b/c8/681bc86f22bfafcce19fca003e0e57b8.jpg');">
   <div class="hero-content">
-    <h1>Interiors built around how you actually live.</h1>
+    <h1>Premium Interior Design Studio in Dibrugarh</h1>
     <p class="lede">D Interior designs and fits out homes across Dibrugarh — fitted wardrobes in warm wood and brushed gold, mahogany detailing, and full room makeovers made for Upper Assam living.</p>
     <div class="cta-row">
       <a href="#contact" class="btn btn-mahogany" data-page-link="contact">Get Free Quote</a>
@@ -686,40 +715,31 @@ h3.h-sub{ font-size:clamp(20px,2.4vw,26px); line-height:1.25; }
 
 <section class="section section--ivory-warm">
   <div class="container">
-    <div class="featured-grid">
+    <div class="about-simple-grid">
 
-      <div class="featured-media reveal">
-        <img class="featured-img-main" src="https://images.unsplash.com/photo-1615147342761-9238e15d8b96?auto=format&fit=crop&w=900&q=80" alt="Styled D Interior living room with warm wood tones">
-        <img class="featured-img-accent" src="https://images.unsplash.com/photo-1653974123446-3eeff06fb6fb?auto=format&fit=crop&w=700&q=80" alt="D Interior bedroom detail with layered textures">
+      <div class="about-simple-media reveal">
+        <img class="about-simple-photo" src="https://images.unsplash.com/photo-1615147342761-9238e15d8b96?auto=format&fit=crop&w=800&q=80" alt="D Interior designer reviewing a fit-out plan on site">
+        <div class="about-simple-badge">
+          <span class="asb-num">9+</span>
+          <span class="asb-label">Years of<br>Experience</span>
+        </div>
       </div>
 
-      <div class="featured-copy reveal">
-        <span class="eyebrow" style="color:var(--mahogany);">About D Interior</span>
-        <h2 class="h-display">We are a creative interior design studio, built for Dibrugarh homes.</h2>
-        <p class="lede" style="color:var(--ink); margin-top:16px;">From first sketch to final handover, we design and build every room around your household's habits — warm wood tones, brass detailing and finishes chosen to hold up through Upper Assam's climate.</p>
+      <div class="about-simple-copy reveal">
+        <span class="eyebrow" style="color:var(--mahogany);">About Us</span>
+        <h2 class="h-display">Dibrugarh's Most Trusted Interior Design Studio</h2>
+        <p class="lede" style="color:var(--ink); margin-top:16px;">For nine years D Interior has designed and fitted wardrobes, bedrooms and full homes across Dibrugarh and Upper Assam — warm wood tones, brass detailing and finishes chosen to hold up through the local climate, delivered by our own carpentry and site teams from first sketch to final handover.</p>
 
-        <div class="featured-points">
-          <div class="fp-item">
-            <div class="fp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 20l9-16H3z"/><path d="M12 20v-8"/></svg></div>
-            <div><h4>3D Concept Design</h4><p>Visual concepts before anything is ordered.</p></div>
-          </div>
-          <div class="fp-item">
-            <div class="fp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 21V9"/></svg></div>
-            <div><h4>Space Planning</h4><p>Layouts that make the most of every corner.</p></div>
-          </div>
-          <div class="fp-item">
-            <div class="fp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
-            <div><h4>Material Selection</h4><p>Wood, hardware and finishes chosen together.</p></div>
-          </div>
-          <div class="fp-item">
-            <div class="fp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.1-3.1a4 4 0 0 1-5.7 5.7L6.6 20.4a2 2 0 1 1-2.8-2.8L12.3 9a4 4 0 0 1 5.7-5.7z"/></svg></div>
-            <div><h4>Site Execution</h4><p>Our own carpentry and site teams build to plan.</p></div>
-          </div>
+        <div class="simple-stats">
+          <div class="simple-stat"><b>180+</b><span>Projects Done</span></div>
+          <div class="simple-stat"><b>12+</b><span>Design Awards</span></div>
+          <div class="simple-stat"><b>100%</b><span>Client Satisfaction</span></div>
+          <div class="simple-stat"><b>9+</b><span>Years Experience</span></div>
         </div>
 
         <div class="cta-row" style="margin-top:34px;">
-          <a href="#services" class="btn btn-mahogany" data-page-link="services">Our Services</a>
-          <a href="#about" class="btn btn-ghost-light" data-page-link="about">More About Us</a>
+          <a href="#about" class="btn btn-mahogany" data-page-link="about">Know More About Us</a>
+          <a href="#services" class="btn btn-ghost-light" data-page-link="services">Our Services</a>
         </div>
       </div>
 
@@ -1264,6 +1284,11 @@ h3.h-sub{ font-size:clamp(20px,2.4vw,26px); line-height:1.25; }
       </div>
 
     </div>
+
+    <div class="section-foot">
+      <a href="#contact" class="btn btn-mahogany" data-page-link="contact">Get a Free Consultation</a>
+      <a href="#portfolio" class="btn btn-ghost-light" data-page-link="portfolio" style="margin-left:16px;">See Work In These Categories</a>
+    </div>
   </div>
 </section>
 
@@ -1379,6 +1404,7 @@ h3.h-sub{ font-size:clamp(20px,2.4vw,26px); line-height:1.25; }
     <h2 class="h-display">Start Your Project</h2>
     <div class="cta-row">
       <a href="#contact" class="btn btn-mahogany" data-page-link="contact">Get Free Quote</a>
+      <a href="#portfolio" class="btn btn-ghost-light" data-page-link="portfolio">View Our Portfolio</a>
     </div>
   </div>
 </section>
@@ -1662,7 +1688,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var scrollTimeout = null;
 
     function goTo(index, smooth) {
-      index = Math.max(0, Math.min(slides.length - 1, index));
+      index = ((index % slides.length) + slides.length) % slides.length;
       current = index;
       track.scrollTo({ left: slides[index].offsetLeft, behavior: smooth === false ? 'auto' : 'smooth' });
       updateDots();
@@ -1670,11 +1696,35 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateDots() {
       dots.forEach(function (d, i) { d.classList.toggle('is-active', i === current); });
     }
-    prevBtn.addEventListener('click', function () { goTo(current - 1); });
-    nextBtn.addEventListener('click', function () { goTo(current + 1); });
+    var autoplayDelay = 5000;
+    var autoplayTimer = null;
+
+    function startAutoplay() {
+      stopAutoplay();
+      autoplayTimer = setInterval(function () {
+        goTo((current + 1) % slides.length);
+      }, autoplayDelay);
+    }
+    function stopAutoplay() {
+      if (autoplayTimer) { clearInterval(autoplayTimer); autoplayTimer = null; }
+    }
+    function restartAutoplay() {
+      stopAutoplay();
+      startAutoplay();
+    }
+
+    prevBtn.addEventListener('click', function () { goTo(current - 1); restartAutoplay(); });
+    nextBtn.addEventListener('click', function () { goTo(current + 1); restartAutoplay(); });
     dots.forEach(function (dot, i) {
-      dot.addEventListener('click', function () { goTo(i); });
+      dot.addEventListener('click', function () { goTo(i); restartAutoplay(); });
     });
+
+    // Pause on hover/touch so it doesn't jump mid-interaction
+    carousel.addEventListener('pointerenter', stopAutoplay);
+    carousel.addEventListener('pointerleave', startAutoplay);
+    carousel.addEventListener('pointerdown', stopAutoplay);
+
+    if (!reduceMotion) startAutoplay();
 
     // Keep dots in sync when the user swipes/scrolls the track directly
     track.addEventListener('scroll', function () {
