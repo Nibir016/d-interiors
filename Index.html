@@ -1,0 +1,1704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D Interior — Interior Design Studio in Dibrugarh, Assam</title>
+<meta name="description" content="D Interior designs fitted wardrobes, bedrooms and full home interiors across Dibrugarh, Assam — warm wood tones, brass detailing and mahogany finishes, built for how you actually live.">
+<style>
+/* ============================================================
+   D INTERIOR — DESIGN SYSTEM
+   Deep emerald + mahogany + brass, grounded in real fit-out work.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root{
+  --emerald:      #1C1815;
+  --emerald-deep: #12100D;
+  --ivory:        #FAF8F4;
+  --ivory-warm:   #EDE7DD;
+  --brass:        #B99257;
+  --brass-light:  #D3B076;
+  --mahogany:     #6B2E28;
+  --mahogany-light:#8A3D35;
+  --muted-teal:   #3A322A;
+  --ink:          #1B1B18;
+  --line-dark:    rgba(250,248,244,0.14);
+  --line-light:   rgba(28,24,21,0.12);
+
+  --serif: 'Fraunces', serif;
+  --sans: 'Manrope', sans-serif;
+
+  --container: 1240px;
+  --radius: 2px;
+  --ease: cubic-bezier(.22,.68,.31,1);
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *,*::before,*::after{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important; }
+}
+
+body{
+  margin:0;
+  font-family:var(--sans);
+  background:var(--ivory);
+  color:var(--ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+ul{ margin:0; padding:0; list-style:none; }
+h1,h2,h3,h4{ font-family:var(--serif); font-weight:500; margin:0; letter-spacing:-0.01em; }
+p{ margin:0; }
+button{ font-family:var(--sans); cursor:pointer; border:none; background:none; }
+
+:focus-visible{
+  outline:2px solid var(--brass);
+  outline-offset:3px;
+}
+
+.container{ max-width:var(--container); margin:0 auto; padding:0 32px; }
+@media (max-width:640px){ .container{ padding:0 20px; } }
+
+.section{ padding:104px 0; }
+@media (max-width:900px){ .section{ padding:72px 0; } }
+
+.section--emerald{ background:var(--ivory-warm); color:var(--ink); }
+.section--ivory{ background:var(--ivory); color:var(--ink); }
+.section--ivory-warm{ background:var(--ivory-warm); color:var(--ink); }
+
+.eyebrow{
+  font-family:var(--sans);
+  font-size:12.5px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--brass);
+  font-weight:700;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:18px;
+}
+.eyebrow::before{ content:''; width:26px; height:1px; background:var(--brass); display:inline-block; }
+
+h2.h-display{ font-size:clamp(32px,4.6vw,54px); line-height:1.1; }
+h3.h-sub{ font-size:clamp(20px,2.4vw,26px); line-height:1.25; }
+
+.lede{ font-size:18.5px; line-height:1.75; color:inherit; opacity:0.86; max-width:52ch; }
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:16px 30px;
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  border-radius:var(--radius);
+  transition:transform .35s var(--ease), background .3s ease, color .3s ease, border-color .3s ease, box-shadow .3s ease;
+  white-space:nowrap;
+}
+.btn-mahogany{ background:var(--mahogany); color:var(--ivory); box-shadow:0 10px 30px -12px rgba(107,46,40,0.65); }
+.btn-mahogany:hover{ background:var(--mahogany-light); transform:translateY(-2px); }
+
+.btn-ghost-dark{ border:1px solid var(--line-dark); color:var(--ivory); }
+.btn-ghost-dark:hover{ border-color:var(--brass); color:var(--brass); transform:translateY(-2px); }
+
+.btn-ghost-light{ border:1px solid var(--line-light); color:var(--emerald); }
+.btn-ghost-light:hover{ border-color:var(--emerald); background:var(--emerald); color:var(--ivory); transform:translateY(-2px); }
+
+.btn-brass{ background:var(--brass); color:var(--emerald-deep); }
+.btn-brass:hover{ background:var(--brass-light); transform:translateY(-2px); }
+
+.cta-row{ display:flex; gap:16px; flex-wrap:wrap; align-items:center; }
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav{
+  position:sticky; top:0; z-index:200;
+  background:rgba(250,248,244,0.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line-light);
+  transition:box-shadow .3s ease;
+}
+.nav.is-scrolled{ box-shadow:0 12px 30px -18px rgba(0,0,0,.12); }
+.nav-inner{
+  max-width:var(--container); margin:0 auto; padding:0 32px;
+  height:78px; display:flex; align-items:center; justify-content:space-between;
+}
+.nav-logo{
+  font-family:var(--serif); font-size:22px; color:var(--ink); letter-spacing:0.02em;
+}
+.nav-logo span{ color:var(--brass); }
+.nav-links{ display:flex; align-items:center; gap:38px; }
+.nav-links a{
+  font-size:13.5px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink);
+  opacity:0.72; position:relative; padding:6px 0; font-weight:600;
+}
+.nav-links a::after{
+  content:''; position:absolute; left:0; right:0; bottom:0; height:1px; background:var(--brass);
+  transform:scaleX(0); transform-origin:left; transition:transform .3s var(--ease);
+}
+.nav-links a:hover{ opacity:1; }
+.nav-links a:hover::after,
+.nav-links a[aria-current="page"]::after{ transform:scaleX(1); }
+.nav-links a[aria-current="page"]{ opacity:1; color:var(--mahogany); }
+.nav-cta{ display:flex; align-items:center; gap:22px; }
+.nav-cta .btn{ padding:12px 24px; font-size:12.5px; }
+.nav-cta .btn-ghost-dark{ border:1px solid var(--line-light); color:var(--ink); }
+.nav-cta .btn-ghost-dark:hover{ border-color:var(--mahogany); color:var(--mahogany); }
+
+.nav-burger{ display:none; width:26px; height:20px; position:relative; }
+.nav-burger span{ position:absolute; left:0; right:0; height:2px; background:var(--ink); transition:all .3s ease; }
+.nav-burger span:nth-child(1){ top:0; }
+.nav-burger span:nth-child(2){ top:9px; }
+.nav-burger span:nth-child(3){ top:18px; }
+.nav-burger.is-open span:nth-child(1){ transform:translateY(9px) rotate(45deg); }
+.nav-burger.is-open span:nth-child(2){ opacity:0; }
+.nav-burger.is-open span:nth-child(3){ transform:translateY(-9px) rotate(-45deg); }
+
+@media (max-width:900px){
+  .nav-links{
+    position:fixed; inset:78px 0 0 0; background:var(--ivory);
+    flex-direction:column; justify-content:flex-start; padding:40px 32px; gap:26px;
+    transform:translateX(100%); transition:transform .4s var(--ease); overflow-y:auto;
+    border-top:1px solid var(--line-light);
+  }
+  .nav-links.is-open{ transform:translateX(0); }
+  .nav-links a{ font-size:16px; color:var(--ink); }
+  .nav-cta .btn-ghost-dark{ display:none; }
+  .nav-burger{ display:block; }
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  position:relative; min-height:92vh; display:flex; align-items:flex-end;
+  background-size:cover; background-position:center;
+  overflow:hidden;
+}
+.hero::before{
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(18,16,13,0.35) 0%, rgba(18,16,13,0.35) 40%, rgba(18,16,13,0.92) 100%);
+}
+.hero-content{
+  position:relative; z-index:2; padding:0 32px 96px; max-width:var(--container); margin:0 auto; width:100%;
+  color:var(--ivory);
+  opacity:0; transform:translateY(24px);
+  animation:heroIn 1.1s var(--ease) .2s forwards;
+}
+@keyframes heroIn{ to{ opacity:1; transform:translateY(0); } }
+@media (prefers-reduced-motion: reduce){ .hero-content{ opacity:1; transform:none; animation:none; } }
+
+.hero-content h1{ font-size:clamp(34px,5.6vw,64px); line-height:1.06; max-width:16ch; margin-bottom:22px; }
+.hero-content .lede{ color:var(--ivory); opacity:0.88; max-width:46ch; margin-bottom:34px; font-size:18px; }
+
+/* ============================================================
+   SERVICE CARDS
+   ============================================================ */
+.grid-cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin-top:52px; }
+@media (max-width:900px){ .grid-cards{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:600px){ .grid-cards{ grid-template-columns:1fr; } }
+
+.card{
+  background:var(--ivory); border:1px solid var(--line-light); border-radius:var(--radius);
+  padding:34px 28px; transition:transform .4s var(--ease), box-shadow .4s var(--ease), border-color .4s ease;
+  position:relative;
+}
+.card:hover{ transform:translateY(-6px); box-shadow:0 26px 50px -30px rgba(28,24,21,.35); border-color:transparent; }
+.card .card-icon{ width:44px; height:44px; margin-bottom:22px; color:var(--mahogany); }
+.card h4{ font-size:19px; margin-bottom:10px; }
+.card p{ font-size:14.5px; opacity:0.72; }
+.card .card-underline{
+  display:block; width:32px; height:2px; background:var(--brass); margin-top:20px;
+  transform:scaleX(1); transition:width .35s var(--ease);
+}
+.card:hover .card-underline{ width:60px; }
+
+.section-foot{ text-align:center; margin-top:56px; }
+
+/* ============================================================
+   BEFORE / AFTER SLIDER (single, swipeable carousel)
+   ============================================================ */
+.ba-wrap{ max-width:820px; margin:52px auto 0; }
+.ba-carousel{ position:relative; }
+.ba-track{
+  display:flex;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  gap:0;
+  border-radius:var(--radius);
+}
+.ba-track::-webkit-scrollbar{ display:none; }
+.ba-slide{
+  flex:0 0 100%;
+  scroll-snap-align:center;
+  scroll-snap-stop:always;
+}
+.ba-slider{
+  position:relative; aspect-ratio:16/10; border-radius:var(--radius); overflow:hidden;
+  box-shadow:0 30px 60px -30px rgba(0,0,0,.5); user-select:none; touch-action:pan-y;
+}
+.ba-caption{ margin-top:16px; text-align:center; font-size:13px; font-weight:700; letter-spacing:0.03em; text-transform:uppercase; color:var(--mahogany); }
+.ba-slider img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.ba-after{ clip-path:inset(0 0 0 50%); }
+.ba-tag{
+  position:absolute; top:20px; font-size:12px; letter-spacing:0.1em; text-transform:uppercase;
+  font-weight:700; color:var(--ivory); background:rgba(18,16,13,0.65); padding:7px 14px; border-radius:2px; z-index:3;
+}
+.ba-tag.before{ left:20px; } .ba-tag.after{ right:20px; }
+.ba-handle{
+  position:absolute; top:0; bottom:0; left:50%; width:3px; background:var(--brass);
+  transform:translateX(-50%); cursor:ew-resize; z-index:4;
+}
+.ba-handle .knob{
+  position:absolute; top:50%; left:50%; width:50px; height:50px; border-radius:50%;
+  background:var(--brass); transform:translate(-50%,-50%); display:flex; align-items:center; justify-content:center;
+  box-shadow:0 8px 24px -8px rgba(0,0,0,.5);
+}
+.ba-nav-btn{
+  position:absolute; top:50%; transform:translateY(-50%); z-index:5;
+  width:48px; height:48px; border-radius:50%; background:var(--ivory); border:1px solid var(--line-light);
+  display:flex; align-items:center; justify-content:center; color:var(--mahogany);
+  box-shadow:0 16px 32px -16px rgba(0,0,0,.35); transition:transform .3s ease, background .3s ease, color .3s ease;
+}
+.ba-nav-btn:hover{ background:var(--mahogany); color:var(--ivory); }
+.ba-nav-prev{ left:-24px; }
+.ba-nav-next{ right:-24px; }
+@media (max-width:640px){
+  .ba-nav-prev{ left:6px; }
+  .ba-nav-next{ right:6px; }
+  .ba-nav-btn{ width:40px; height:40px; }
+}
+.ba-dots{ display:flex; justify-content:center; gap:9px; margin-top:22px; }
+.ba-dot{
+  width:8px; height:8px; border-radius:50%; background:var(--line-light); transition:background .3s ease, transform .3s ease;
+  border:none; padding:0;
+}
+.ba-dot.is-active{ background:var(--mahogany); transform:scale(1.3); }
+.ba-headline{ text-align:center; margin-top:44px; }
+
+/* ============================================================
+   ICON / WHY CHOOSE
+   ============================================================ */
+.grid-4{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin-top:52px; }
+@media (max-width:980px){ .grid-4{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:560px){ .grid-4{ grid-template-columns:1fr; } }
+.why-card{ text-align:left; padding:8px; }
+.why-card .num{ font-family:var(--serif); font-size:15px; color:var(--brass); margin-bottom:14px; letter-spacing:0.04em; }
+.why-card h4{ font-size:18px; margin-bottom:10px; color:var(--ink); }
+.why-card p{ font-size:14px; opacity:0.72; }
+
+/* ============================================================
+   PROCESS TIMELINE
+   ============================================================ */
+.timeline{ display:grid; grid-template-columns:repeat(6,1fr); gap:20px; margin-top:60px; position:relative; }
+@media (max-width:980px){ .timeline{ grid-template-columns:repeat(3,1fr); } }
+@media (max-width:600px){ .timeline{ grid-template-columns:1fr; } }
+.timeline::before{
+  content:''; position:absolute; top:23px; left:0; right:0; height:1px; background:var(--line-light); z-index:0;
+}
+@media (max-width:980px){ .timeline::before{ display:none; } }
+.tl-step{ position:relative; z-index:1; }
+.tl-marker{
+  width:46px; height:46px; border-radius:50%; border:1px solid var(--brass); background:var(--ivory);
+  display:flex; align-items:center; justify-content:center; margin-bottom:20px; color:var(--mahogany);
+}
+.tl-step h4{ font-size:15.5px; margin-bottom:8px; }
+.tl-step p{ font-size:13px; opacity:0.68; }
+
+/* ============================================================
+   TESTIMONIAL MARQUEE
+   ============================================================ */
+.marquee{ overflow:hidden; margin-top:50px; -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent); mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent); }
+.marquee-track{ display:flex; gap:24px; width:max-content; animation:marquee 34s linear infinite; }
+.marquee:hover .marquee-track{ animation-play-state:paused; }
+@media (prefers-reduced-motion: reduce){ .marquee-track{ animation:none; overflow-x:auto; } }
+@keyframes marquee{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+.t-card{
+  width:360px; flex:0 0 auto; background:var(--ivory); color:var(--ink); border-radius:var(--radius);
+  padding:30px 28px; box-shadow:0 20px 40px -26px rgba(0,0,0,.35);
+}
+@media (max-width:640px){ .t-card{ width:82vw; } }
+.t-stars{ color:var(--brass); font-size:14px; letter-spacing:2px; margin-bottom:14px; }
+.t-quote{ font-size:14.5px; line-height:1.7; opacity:0.85; margin-bottom:20px; }
+.t-name{ display:flex; align-items:center; gap:12px; }
+.t-avatar{
+  width:38px; height:38px; border-radius:50%; background:var(--emerald); color:var(--brass);
+  display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:14px;
+}
+.t-name b{ font-size:13.5px; display:block; }
+.t-name span{ font-size:11.5px; opacity:0.6; }
+
+/* ============================================================
+   FAQ ACCORDION
+   ============================================================ */
+.faq-list{ max-width:820px; margin:52px auto 0; border-top:1px solid var(--line-light); }
+.faq-item{ border-bottom:1px solid var(--line-light); }
+.faq-q{
+  width:100%; display:flex; justify-content:space-between; align-items:center; gap:20px;
+  padding:24px 4px; text-align:left; font-size:16px; font-weight:700; color:inherit;
+}
+.faq-q .plus{ flex:0 0 auto; width:20px; height:20px; position:relative; }
+.faq-q .plus::before,.faq-q .plus::after{ content:''; position:absolute; background:var(--mahogany); transition:transform .3s ease; }
+.faq-q .plus::before{ top:9px; left:0; width:20px; height:2px; }
+.faq-q .plus::after{ left:9px; top:0; width:2px; height:20px; }
+.faq-item.is-open .plus::after{ transform:scaleY(0); }
+.faq-a{ max-height:0; overflow:hidden; transition:max-height .4s var(--ease); }
+.faq-a p{ padding:0 4px 24px; font-size:14.5px; opacity:0.72; max-width:68ch; }
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+.final-cta{ text-align:center; }
+.final-cta h2{ max-width:18ch; margin:0 auto 30px; }
+.final-cta .cta-row{ justify-content:center; }
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+.contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:56px; }
+@media (max-width:900px){ .contact-grid{ grid-template-columns:1fr; } }
+.form-field{ margin-bottom:20px; }
+.form-field label{ display:block; font-size:12.5px; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:8px; opacity:0.7; font-weight:700; }
+.form-field input,.form-field textarea,.form-field select{
+  width:100%; padding:14px 16px; border:1px solid var(--line-light); border-radius:2px; font-family:var(--sans);
+  font-size:14.5px; background:#fff; color:var(--ink); transition:border-color .3s ease;
+}
+.form-field input:focus,.form-field textarea:focus,.form-field select:focus{ border-color:var(--brass); }
+.contact-info-list{ display:flex; flex-direction:column; gap:22px; margin:30px 0 34px; }
+.contact-info-item{ display:flex; gap:16px; align-items:flex-start; }
+.contact-info-item .ci-icon{ width:22px; height:22px; color:var(--brass); flex:0 0 auto; margin-top:2px; }
+.contact-info-item b{ display:block; font-size:13px; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px; opacity:0.75; }
+.map-embed{ border-radius:var(--radius); overflow:hidden; border:1px solid var(--line-light); }
+.map-embed iframe{ width:100%; height:280px; border:0; display:block; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer{ background:var(--emerald-deep); color:var(--ivory); padding:70px 0 30px; }
+.footer-top{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1.2fr; gap:44px; padding-bottom:50px; border-bottom:1px solid var(--line-dark); }
+@media (max-width:900px){ .footer-top{ grid-template-columns:1fr 1fr; } }
+@media (max-width:560px){ .footer-top{ grid-template-columns:1fr; } }
+.footer-logo{ font-family:var(--serif); font-size:24px; margin-bottom:14px; }
+.footer-logo span{ color:var(--brass); }
+.footer p.small{ font-size:13.5px; opacity:0.65; max-width:32ch; }
+.footer h5{ font-family:var(--sans); font-size:12.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--brass); margin-bottom:18px; font-weight:700; }
+.footer ul li{ margin-bottom:12px; font-size:14px; opacity:0.78; }
+.footer ul li a:hover{ opacity:0.6; }
+.footer-bottom{ display:flex; justify-content:space-between; padding-top:26px; font-size:12.5px; opacity:0.55; flex-wrap:wrap; gap:10px; }
+
+/* ============================================================
+   WHATSAPP FLOAT
+   ============================================================ */
+.wa-float{
+  position:fixed; right:24px; bottom:24px; z-index:300; width:60px; height:60px; border-radius:50%;
+  background:#25D366; display:flex; align-items:center; justify-content:center; box-shadow:0 14px 30px -10px rgba(0,0,0,.5);
+}
+.wa-float svg{ width:30px; height:30px; }
+.wa-float::before{
+  content:''; position:absolute; inset:0; border-radius:50%; background:#25D366; opacity:0.6;
+  animation:waPulse 2.4s ease-out infinite;
+}
+@media (prefers-reduced-motion: reduce){ .wa-float::before{ animation:none; display:none; } }
+@keyframes waPulse{ 0%{ transform:scale(1); opacity:0.55; } 100%{ transform:scale(1.9); opacity:0; } }
+.wa-tooltip{
+  position:absolute; right:72px; top:50%; transform:translateY(-50%) translateX(6px);
+  background:var(--emerald-deep); color:var(--ivory); font-size:13px; padding:8px 14px; border-radius:4px;
+  white-space:nowrap; opacity:0; pointer-events:none; transition:all .3s ease;
+}
+.wa-float:hover .wa-tooltip{ opacity:1; transform:translateY(-50%) translateX(0); }
+
+/* ============================================================
+   REVEAL ON SCROLL
+   ============================================================ */
+.reveal{ opacity:0; transform:translateY(28px); transition:opacity .8s var(--ease), transform .8s var(--ease); }
+.reveal.is-visible{ opacity:1; transform:translateY(0); }
+@media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; transition:none; } }
+
+/* ============================================================
+   PAGE HEADER (non-home pages)
+   ============================================================ */
+.page-header{ padding:64px 0 12px; }
+.page-header .eyebrow{ margin-bottom:14px; }
+
+/* Portfolio filters */
+.filter-row{ display:flex; gap:10px; flex-wrap:wrap; margin:36px 0 46px; }
+.filter-btn{
+  padding:10px 20px; border:1px solid var(--line-light); border-radius:30px; font-size:12.5px;
+  letter-spacing:0.05em; text-transform:uppercase; color:var(--ink); opacity:0.75; transition:all .3s ease; font-weight:700;
+}
+.filter-btn:hover{ opacity:1; border-color:var(--brass); }
+.filter-btn.is-active{ background:var(--brass); border-color:var(--brass); color:var(--emerald-deep); opacity:1; }
+
+.masonry{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+@media (max-width:980px){ .masonry{ grid-template-columns:repeat(2,1fr); gap:18px; } }
+@media (max-width:600px){ .masonry{ grid-template-columns:1fr; } }
+.masonry-item{ border-radius:18px; overflow:hidden; position:relative; cursor:pointer; aspect-ratio:4/3.4; }
+.masonry-item img{ width:100%; height:100%; display:block; object-fit:cover; transition:transform .6s var(--ease); }
+.masonry-item:hover img{ transform:scale(1.05); }
+.masonry-item .mi-overlay{
+  position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(0,0,0,.7) 100%);
+  display:flex; align-items:flex-end; padding:16px; opacity:0; transition:opacity .35s ease;
+}
+.masonry-item:hover .mi-overlay{ opacity:1; }
+.masonry-item .mi-overlay span{ color:var(--ivory); font-size:13px; letter-spacing:0.04em; text-transform:uppercase; font-weight:700; }
+
+/* Lightbox */
+.lightbox{ position:fixed; inset:0; background:rgba(6,16,14,0.94); z-index:400; display:none; align-items:center; justify-content:center; padding:30px; }
+.lightbox.is-open{ display:flex; }
+.lightbox img{ max-width:min(1100px,90vw); max-height:82vh; object-fit:contain; border-radius:2px; }
+.lightbox-close,.lightbox-prev,.lightbox-next{
+  position:absolute; color:var(--ivory); width:46px; height:46px; border-radius:50%; border:1px solid var(--line-dark);
+  display:flex; align-items:center; justify-content:center; transition:all .3s ease;
+}
+.lightbox-close:hover,.lightbox-prev:hover,.lightbox-next:hover{ border-color:var(--brass); color:var(--brass); }
+.lightbox-close{ top:24px; right:24px; }
+.lightbox-prev{ left:24px; top:50%; transform:translateY(-50%); }
+.lightbox-next{ right:24px; top:50%; transform:translateY(-50%); }
+@media (max-width:640px){ .lightbox-prev,.lightbox-next{ width:38px; height:38px; } }
+
+/* Services page expand */
+.svc-card{ cursor:pointer; }
+.svc-card p.svc-more{ max-height:0; overflow:hidden; opacity:0; transition:all .4s var(--ease); font-size:14px; margin-top:14px; }
+.svc-card.is-open p.svc-more{ max-height:220px; opacity:1; }
+.svc-more-btn{ margin-top:16px; font-size:12.5px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:var(--mahogany); display:inline-flex; align-items:center; gap:6px; }
+
+/* About stats */
+.about-hero-img{ border-radius:2px; overflow:hidden; box-shadow:0 30px 60px -30px rgba(0,0,0,.4); }
+.about-split{ display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+@media (max-width:900px){ .about-split{ grid-template-columns:1fr; } }
+.stat-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin-top:20px; }
+@media (max-width:700px){ .stat-grid{ grid-template-columns:repeat(2,1fr); } }
+.stat-box{ text-align:center; padding:30px 14px; border:1px solid var(--line-light); border-radius:2px; }
+.stat-box b{ display:block; font-family:var(--serif); font-size:34px; color:var(--mahogany); }
+.stat-box span{ display:block; font-size:12px; text-transform:uppercase; letter-spacing:0.05em; opacity:0.65; margin-top:6px; }
+
+.team-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:20px; }
+@media (max-width:700px){ .team-grid{ grid-template-columns:1fr; } }
+.team-card{ text-align:center; }
+.team-photo{
+  width:100%; aspect-ratio:1; border-radius:50%; overflow:hidden; margin-bottom:18px; box-shadow:0 20px 40px -24px rgba(0,0,0,.4);
+}
+.team-card h4{ font-size:17px; margin-bottom:4px; }
+.team-card span{ font-size:12.5px; text-transform:uppercase; letter-spacing:0.05em; color:var(--brass); font-weight:700; }
+
+/* ============================================================
+   FEATURED (Home) — intro + image collage
+   ============================================================ */
+.featured-grid{ display:grid; grid-template-columns:0.85fr 1.15fr; gap:64px; align-items:center; }
+@media (max-width:900px){ .featured-grid{ grid-template-columns:1fr; gap:52px; } }
+.featured-media{ position:relative; }
+.featured-img-main{ border-radius:var(--radius); width:100%; aspect-ratio:4/5; object-fit:cover; box-shadow:0 30px 60px -30px rgba(0,0,0,.35); }
+.featured-img-accent{
+  position:absolute; width:46%; aspect-ratio:4/3; object-fit:cover; border-radius:var(--radius);
+  right:-6%; bottom:-9%; border:7px solid var(--ivory-warm); box-shadow:0 24px 50px -24px rgba(0,0,0,.4);
+}
+@media (max-width:900px){ .featured-img-accent{ right:4%; bottom:-7%; width:52%; } }
+
+.featured-points{ display:grid; grid-template-columns:1fr 1fr; gap:24px 22px; margin-top:36px; }
+@media (max-width:560px){ .featured-points{ grid-template-columns:1fr; } }
+.fp-item{ display:flex; gap:14px; align-items:flex-start; }
+.fp-icon{
+  width:42px; height:42px; flex:0 0 auto; border-radius:50%; background:var(--ivory);
+  border:1px solid var(--line-light); display:flex; align-items:center; justify-content:center; color:var(--mahogany);
+}
+.fp-icon svg{ width:19px; height:19px; }
+.fp-item h4{ font-size:15px; margin-bottom:4px; }
+.fp-item p{ font-size:13px; opacity:0.68; }
+
+/* ============================================================
+   LATEST PROJECT STRIP (Home)
+   ============================================================ */
+.latest-head{ display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:20px; margin-bottom:40px; }
+
+.lp-strip{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+@media (max-width:980px){ .lp-strip{ grid-template-columns:1fr 1fr; } }
+@media (max-width:600px){ .lp-strip{ grid-template-columns:1fr; } }
+.lp-item{ position:relative; aspect-ratio:3/4; border-radius:18px; overflow:hidden; background-size:cover; background-position:center; }
+.lp-overlay{
+  position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end; padding:22px;
+  background:linear-gradient(180deg, transparent 40%, rgba(18,16,13,.88) 100%); opacity:0; transition:opacity .35s ease; color:var(--ivory);
+}
+.lp-item:hover .lp-overlay,
+.lp-item.lp-featured .lp-overlay{ opacity:1; }
+.lp-item.lp-featured .lp-overlay{ background:linear-gradient(180deg, rgba(18,16,13,.05) 30%, rgba(18,16,13,.88) 100%); }
+.lp-overlay h4{ font-size:16px; margin-bottom:4px; max-width:16ch; }
+.lp-overlay p{ font-size:12.5px; opacity:0.8; margin-bottom:12px; }
+.lp-link{ font-size:11.5px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:var(--brass); }
+
+/* ============================================================
+   SERVICES — compact grid with View All
+   ============================================================ */
+.svc-head-row{ display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:20px; }
+.svc-grid-compact{ display:grid; grid-template-columns:repeat(4,1fr); gap:22px; margin-top:44px; }
+@media (max-width:980px){ .svc-grid-compact{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:560px){ .svc-grid-compact{ grid-template-columns:1fr; } }
+.svc-compact-card{
+  background:var(--ivory); border:1px solid var(--line-light); border-radius:var(--radius); padding:30px 24px;
+  transition:transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s ease;
+}
+.svc-compact-card:hover{ transform:translateY(-5px); box-shadow:0 24px 44px -28px rgba(28,24,21,.3); border-color:transparent; }
+.svc-icon-box{
+  width:52px; height:52px; border-radius:10px; background:var(--ivory-warm);
+  display:flex; align-items:center; justify-content:center; color:var(--mahogany); margin-bottom:20px;
+}
+.svc-icon-box svg{ width:24px; height:24px; }
+.svc-compact-card h4{ font-size:16.5px; margin-bottom:8px; }
+.svc-compact-card p{ font-size:13.5px; opacity:0.7; }
+
+/* ============================================================
+   PAGE ROUTER (single-file SPA behavior)
+   ============================================================ */
+.page{ display:none; }
+.page.is-active{ display:block; }
+</style>
+</head>
+<body>
+<!-- ============ NAV (shared across all pages) ============ -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo" data-page-link="home">D<span>&nbsp;Interior</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" data-page-link="home">Home</a>
+      <a href="#portfolio" data-page-link="portfolio">Portfolio</a>
+      <a href="#services" data-page-link="services">Services</a>
+      <a href="#about" data-page-link="about">About</a>
+      <a href="#contact" data-page-link="contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-brass" data-page-link="contact">Get Free Quote</a>
+      <button class="nav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ================================================================
+     PAGE: HOME
+     ================================================================ -->
+<main class="page is-active" id="page-home" data-page="home">
+
+<section class="hero" style="background-image:url('https://i.pinimg.com/1200x/68/1b/c8/681bc86f22bfafcce19fca003e0e57b8.jpg');">
+  <div class="hero-content">
+    <h1>Interiors built around how you actually live.</h1>
+    <p class="lede">D Interior designs and fits out homes across Dibrugarh — fitted wardrobes in warm wood and brushed gold, mahogany detailing, and full room makeovers made for Upper Assam living.</p>
+    <div class="cta-row">
+      <a href="#contact" class="btn btn-mahogany" data-page-link="contact">Get Free Quote</a>
+      <a href="#portfolio" class="btn btn-ghost-dark" data-page-link="portfolio">Explore Portfolio</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--ivory-warm">
+  <div class="container">
+    <div class="featured-grid">
+
+      <div class="featured-media reveal">
+        <img class="featured-img-main" src="https://images.unsplash.com/photo-1615147342761-9238e15d8b96?auto=format&fit=crop&w=900&q=80" alt="Styled D Interior living room with warm wood tones">
+        <img class="featured-img-accent" src="https://images.unsplash.com/photo-1653974123446-3eeff06fb6fb?auto=format&fit=crop&w=700&q=80" alt="D Interior bedroom detail with layered textures">
+      </div>
+
+      <div class="featured-copy reveal">
+        <span class="eyebrow" style="color:var(--mahogany);">About D Interior</span>
+        <h2 class="h-display">We are a creative interior design studio, built for Dibrugarh homes.</h2>
+        <p class="lede" style="color:var(--ink); margin-top:16px;">From first sketch to final handover, we design and build every room around your household's habits — warm wood tones, brass detailing and finishes chosen to hold up through Upper Assam's climate.</p>
+
+        <div class="featured-points">
+          <div class="fp-item">
+            <div class="fp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 20l9-16H3z"/><path d="M12 20v-8"/></svg></div>
+            <div><h4>3D Concept Design</h4><p>Visual concepts before anything is ordered.</p></div>
+          </div>
+          <div class="fp-item">
+            <div class="fp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 21V9"/></svg></div>
+            <div><h4>Space Planning</h4><p>Layouts that make the most of every corner.</p></div>
+          </div>
+          <div class="fp-item">
+            <div class="fp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
+            <div><h4>Material Selection</h4><p>Wood, hardware and finishes chosen together.</p></div>
+          </div>
+          <div class="fp-item">
+            <div class="fp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.1-3.1a4 4 0 0 1-5.7 5.7L6.6 20.4a2 2 0 1 1-2.8-2.8L12.3 9a4 4 0 0 1 5.7-5.7z"/></svg></div>
+            <div><h4>Site Execution</h4><p>Our own carpentry and site teams build to plan.</p></div>
+          </div>
+        </div>
+
+        <div class="cta-row" style="margin-top:34px;">
+          <a href="#services" class="btn btn-mahogany" data-page-link="services">Our Services</a>
+          <a href="#about" class="btn btn-ghost-light" data-page-link="about">More About Us</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section section--ivory">
+  <div class="container">
+    <div class="latest-head reveal">
+      <div>
+        <span class="eyebrow" style="color:var(--mahogany);">Latest Project</span>
+        <h2 class="h-display">Recently finished rooms.</h2>
+      </div>
+    </div>
+
+    <div class="lp-strip reveal">
+      <div class="lp-item lp-featured" data-lp-category="bedroom" style="background-image:url('images/bedroom-teal-arch.png')">
+        <div class="lp-overlay">
+          <h4>Small &amp; Minimal Bedroom, Basanta Nagar</h4>
+          <p>Fitted wardrobe, headboard and lighting as one design.</p>
+          <a class="lp-link" href="#portfolio" data-page-link="portfolio">View Project →</a>
+        </div>
+      </div>
+      <div class="lp-item" data-lp-category="kitchen" style="background-image:url('images/kitchen-pink-teal.png')">
+        <div class="lp-overlay"><h4>Kitchen Refit</h4><p>Mauve cabinetry, teal tile backsplash.</p><a class="lp-link" href="#portfolio" data-page-link="portfolio">View Project →</a></div>
+      </div>
+      <div class="lp-item" data-lp-category="living-room" style="background-image:url('images/livingroom-red-bench.png')">
+        <div class="lp-overlay"><h4>Living Room Makeover</h4><p>Curtains and rust-orange bench seating.</p><a class="lp-link" href="#portfolio" data-page-link="portfolio">View Project →</a></div>
+      </div>
+      <div class="lp-item" data-lp-category="bedroom" style="background-image:url('images/bedroom-kids-space.png')">
+        <div class="lp-overlay"><h4>Kids' Bedroom &amp; Wardrobe</h4><p>Fitted storage with a built-in study desk.</p><a class="lp-link" href="#portfolio" data-page-link="portfolio">View Project →</a></div>
+      </div>
+    </div>
+
+    <div class="section-foot">
+      <a href="#portfolio" class="btn btn-ghost-light" data-page-link="portfolio">View All Projects</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--ivory">
+  <div class="container">
+    <div class="reveal" style="text-align:center; max-width:620px; margin:0 auto;">
+      <span class="eyebrow" style="color:var(--mahogany); justify-content:center;">Before &amp; After</span>
+      <h2 class="h-display">Drag to see the transformation.</h2>
+    </div>
+    <div class="ba-wrap reveal">
+      <div class="ba-carousel" id="baCarousel">
+
+        <button class="ba-nav-btn ba-nav-prev" aria-label="Previous room">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="ba-nav-btn ba-nav-next" aria-label="Next room">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+
+        <div class="ba-track" id="baTrack">
+
+          <div class="ba-slide">
+            <div class="ba-slider">
+              <span class="ba-tag before">Before</span>
+              <span class="ba-tag after">After</span>
+              <img src="https://images.unsplash.com/photo-1643949914877-b20f30792c1e?auto=format&fit=crop&w=1200&q=80" alt="Room before D Interior renovation, with basic bench and cupboards">
+              <img class="ba-after" src="https://images.unsplash.com/photo-1653974123446-3eeff06fb6fb?auto=format&fit=crop&w=1200&q=80" alt="Same room after D Interior renovation, styled bedroom with rug and layered textures">
+              <div class="ba-handle" tabindex="0" role="slider" aria-label="Drag to compare before and after, bedroom" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+                <div class="knob">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1C1815" stroke-width="2"><path d="M8 7l-5 5 5 5"/><path d="M16 7l5 5-5 5"/></svg>
+                </div>
+              </div>
+            </div>
+            <p class="ba-caption">Bedroom</p>
+          </div>
+
+          <div class="ba-slide">
+            <div class="ba-slider">
+              <span class="ba-tag before">Before</span>
+              <span class="ba-tag after">After</span>
+              <img src="https://images.unsplash.com/photo-1663811397261-916af74a9363?auto=format&fit=crop&w=1200&q=80" alt="Kitchen before D Interior renovation, with basic cabinetry">
+              <img class="ba-after" src="https://images.unsplash.com/photo-1714860534425-7ce04e013dec?auto=format&fit=crop&w=1200&q=80" alt="Same kitchen after D Interior renovation, with black cabinetry and white counters">
+              <div class="ba-handle" tabindex="0" role="slider" aria-label="Drag to compare before and after, kitchen" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+                <div class="knob">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1C1815" stroke-width="2"><path d="M8 7l-5 5 5 5"/><path d="M16 7l5 5-5 5"/></svg>
+                </div>
+              </div>
+            </div>
+            <p class="ba-caption">Kitchen</p>
+          </div>
+
+          <div class="ba-slide">
+            <div class="ba-slider">
+              <span class="ba-tag before">Before</span>
+              <span class="ba-tag after">After</span>
+              <img src="https://images.unsplash.com/photo-1615147342761-9238e15d8b96?auto=format&fit=crop&w=1200&q=80" alt="Living room before D Interior renovation, sparsely furnished">
+              <img class="ba-after" src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80" alt="Same living room after D Interior renovation, with console table and styled staircase">
+              <div class="ba-handle" tabindex="0" role="slider" aria-label="Drag to compare before and after, living room" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+                <div class="knob">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1C1815" stroke-width="2"><path d="M8 7l-5 5 5 5"/><path d="M16 7l5 5-5 5"/></svg>
+                </div>
+              </div>
+            </div>
+            <p class="ba-caption">Living Room</p>
+          </div>
+
+          <div class="ba-slide">
+            <div class="ba-slider">
+              <span class="ba-tag before">Before</span>
+              <span class="ba-tag after">After</span>
+              <img src="https://images.unsplash.com/photo-1649361811423-a55616f7ab11?auto=format&fit=crop&w=1200&q=80" alt="Wardrobe space before D Interior renovation, unorganized closet">
+              <img class="ba-after" src="https://images.unsplash.com/photo-1672137233327-37b0c1049e77?auto=format&fit=crop&w=1200&q=80" alt="Same space after D Interior renovation, fitted walk-in wardrobe with mirror and stool">
+              <div class="ba-handle" tabindex="0" role="slider" aria-label="Drag to compare before and after, wardrobe" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+                <div class="knob">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1C1815" stroke-width="2"><path d="M8 7l-5 5 5 5"/><path d="M16 7l5 5-5 5"/></svg>
+                </div>
+              </div>
+            </div>
+            <p class="ba-caption">Wardrobe</p>
+          </div>
+
+        </div>
+
+        <div class="ba-dots" id="baDots">
+          <button class="ba-dot is-active" aria-label="Go to bedroom"></button>
+          <button class="ba-dot" aria-label="Go to kitchen"></button>
+          <button class="ba-dot" aria-label="Go to living room"></button>
+          <button class="ba-dot" aria-label="Go to wardrobe"></button>
+        </div>
+
+      </div>
+
+      <div class="ba-headline">
+        <h3 class="h-sub">Transform Your Space With Expert Design</h3>
+        <div class="cta-row" style="justify-content:center; margin-top:22px;">
+          <a href="#contact" class="btn btn-mahogany" data-page-link="contact">Get Free Quote</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--emerald">
+  <div class="container">
+    <div class="reveal" style="max-width:600px;">
+      <span class="eyebrow">Why Choose Us</span>
+      <h2 class="h-display">Design decisions we don't compromise on.</h2>
+    </div>
+    <div class="grid-4">
+      <div class="why-card reveal">
+        <div class="num">01</div>
+        <h4>Personalised Design Solutions</h4>
+        <p>Every layout starts with your household's habits, not a template pulled from a catalogue.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="num">02</div>
+        <h4>Quality Craftsmanship</h4>
+        <p>Solid joinery, properly finished edges and hardware chosen to outlast trend cycles.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="num">03</div>
+        <h4>On-Time Delivery</h4>
+        <p>A fixed execution schedule shared upfront, with progress updates through every stage.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="num">04</div>
+        <h4>End-to-End Interior Solutions</h4>
+        <p>From first sketch to final handover — design, sourcing and site execution under one roof.</p>
+      </div>
+    </div>
+    <div class="section-foot">
+      <a href="#contact" class="btn btn-brass" data-page-link="contact">Start Your Dream Project</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--ivory">
+  <div class="container">
+    <div class="reveal" style="max-width:600px;">
+      <span class="eyebrow" style="color:var(--mahogany);">Design Process</span>
+      <h2 class="h-display">Six stages, start to handover.</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-step reveal">
+        <div class="tl-marker"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h4>Initial Consultation</h4>
+        <p>We visit the site, understand your brief and budget, and scope the project together.</p>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-marker"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <h4>Space Planning</h4>
+        <p>Measured floor plans and layout options that make the most of every corner.</p>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-marker"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 20l9-16H3z"/><path d="M12 20v-8"/></svg></div>
+        <h4>Design Concept</h4>
+        <p>Mood boards, 3D concepts and finish palettes presented for your sign-off.</p>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-marker"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
+        <h4>Material Selection</h4>
+        <p>Wood veneers, hardware, laminates and stone chosen together, on-site or in showroom.</p>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-marker"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.1-3.1a4 4 0 0 1-5.7 5.7L6.6 20.4a2 2 0 1 1-2.8-2.8L12.3 9a4 4 0 0 1 5.7-5.7z"/></svg></div>
+        <h4>Project Execution</h4>
+        <p>Our carpentry and site teams build to plan, with scheduled quality checks throughout.</p>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-marker"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h4>Final Handover</h4>
+        <p>A final walkthrough, snag-list closure, and the keys to a finished room.</p>
+      </div>
+    </div>
+    <div class="section-foot">
+      <a href="#contact" class="btn btn-ghost-light" data-page-link="contact">Schedule a Consultation</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--emerald">
+  <div class="container">
+    <div class="reveal" style="max-width:600px;">
+      <span class="eyebrow">Testimonials</span>
+      <h2 class="h-display">What clients say about working with us.</h2>
+    </div>
+  </div>
+  <div class="marquee">
+    <div class="marquee-track">
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"D Interior fitted our bedroom wardrobe exactly the way we imagined it — the brass handles and wood tone still look brand new a year on. They listened to how we actually use the space instead of pushing a fixed design."</p>
+        <div class="t-name"><div class="t-avatar">RB</div><div><b>Rina Bora</b><span>Dibrugarh</span></div></div>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"Professional from the first site visit to final handover. The team stuck to the timeline they promised and the finish quality on the mahogany doors is excellent."</p>
+        <div class="t-name"><div class="t-avatar">AP</div><div><b>Ankur Phukan</b><span>Dibrugarh</span></div></div>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"We asked for a bold headboard and they made it work beautifully with the rest of the room instead of it looking out of place. Highly recommend for anyone renovating in Dibrugarh."</p>
+        <div class="t-name"><div class="t-avatar">MG</div><div><b>Manashi Gogoi</b><span>Dibrugarh</span></div></div>
+      </div>
+      <!-- duplicate set for seamless loop -->
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"D Interior fitted our bedroom wardrobe exactly the way we imagined it — the brass handles and wood tone still look brand new a year on. They listened to how we actually use the space instead of pushing a fixed design."</p>
+        <div class="t-name"><div class="t-avatar">RB</div><div><b>Rina Bora</b><span>Dibrugarh</span></div></div>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"Professional from the first site visit to final handover. The team stuck to the timeline they promised and the finish quality on the mahogany doors is excellent."</p>
+        <div class="t-name"><div class="t-avatar">AP</div><div><b>Ankur Phukan</b><span>Dibrugarh</span></div></div>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"We asked for a bold headboard and they made it work beautifully with the rest of the room instead of it looking out of place. Highly recommend for anyone renovating in Dibrugarh."</p>
+        <div class="t-name"><div class="t-avatar">MG</div><div><b>Manashi Gogoi</b><span>Dibrugarh</span></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <p style="text-align:center; opacity:0.6; font-size:13px; margin-top:26px;">5.0★ average from verified Google reviews · growing with every project we complete</p>
+    <div class="section-foot"><a href="#contact" class="btn btn-brass" data-page-link="contact">Join Our Happy Clients</a></div>
+  </div>
+</section>
+
+<section class="section section--ivory">
+  <div class="container">
+    <div class="reveal" style="text-align:center; max-width:600px; margin:0 auto;">
+      <span class="eyebrow" style="color:var(--mahogany); justify-content:center;">FAQ</span>
+      <h2 class="h-display">Answers before you enquire.</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How long does a typical project take?<span class="plus"></span></button>
+        <div class="faq-a"><p>A single room such as a wardrobe or bedroom fit-out usually takes 3–5 weeks from material confirmation to handover. Full-home projects typically run 10–16 weeks depending on scope and site readiness.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Do you take on single-room projects, or only full homes?<span class="plus"></span></button>
+        <div class="faq-a"><p>Both. Many of our clients start with one wardrobe or bedroom and bring us back for the rest of the house later — there's no minimum scope to work with us.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Can the design be adjusted to fit our budget?<span class="plus"></span></button>
+        <div class="faq-a"><p>Yes. We present material and hardware options across a few price tiers for every project, so you can see exactly where the budget is going before committing.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Do you handle commercial spaces as well as homes?<span class="plus"></span></button>
+        <div class="faq-a"><p>Yes — we design and fit out offices, clinics and small retail spaces alongside residential projects, using the same process and site team.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Do you help with material and furniture selection?<span class="plus"></span></button>
+        <div class="faq-a"><p>Selection is part of every project. We shortlist veneers, laminates, hardware and furniture pieces and walk you through the options rather than leaving you to source them alone.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Will I see a 3D concept before work begins?<span class="plus"></span></button>
+        <div class="faq-a"><p>Yes. Every design is shared as a 3D concept and material board for your approval before any material is ordered or site work starts.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Which areas do you serve?<span class="plus"></span></button>
+        <div class="faq-a"><p>We're based in Dibrugarh and serve clients across the city and surrounding areas of Upper Assam. Contact us with your location and we'll confirm site coverage.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How do I get a quote?<span class="plus"></span></button>
+        <div class="faq-a"><p>Fill out the contact form, call, or message us on WhatsApp with your room size and requirements. We'll arrange a site visit and share a detailed quote afterward, free of charge.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How do I get started?<span class="plus"></span></button>
+        <div class="faq-a"><p>Book a free consultation through the contact page or WhatsApp button. We'll take it from the first site visit through to final handover.</p></div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:56px;">
+      <h3 class="h-sub">Still Have Questions?</h3>
+      <div class="cta-row" style="justify-content:center; margin-top:22px;">
+        <a href="#contact" class="btn btn-mahogany" data-page-link="contact">Contact Us Today</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--emerald final-cta">
+  <div class="container">
+    <h2 class="h-display">Let's Design Your Dream Space Together</h2>
+    <div class="cta-row">
+      <a href="#contact" class="btn btn-mahogany" data-page-link="contact">Get Free Quote</a>
+      <a href="tel:08399014147" class="btn btn-ghost-light">Call Now</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--ivory" id="contact-home">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal">
+        <span class="eyebrow" style="color:var(--mahogany);">Contact</span>
+        <h2 class="h-display">Tell us about your space.</h2>
+        <form class="contact-form" style="margin-top:34px;">
+          <div class="form-field"><label for="name">Full Name</label><input id="name" type="text" required></div>
+          <div class="form-field"><label for="phone">Phone Number</label><input id="phone" type="tel" required></div>
+          <div class="form-field"><label for="room">What are you looking to design?</label>
+            <select id="room">
+              <option>Wardrobe / Closet</option>
+              <option>Bedroom</option>
+              <option>Living Room</option>
+              <option>Kitchen</option>
+              <option>Bathroom</option>
+              <option>Full Home</option>
+              <option>Commercial Space</option>
+            </select>
+          </div>
+          <div class="form-field"><label for="msg">Project Details</label><textarea id="msg" rows="4"></textarea></div>
+          <button type="submit" class="btn btn-mahogany" style="width:100%;">Send Enquiry</button>
+          <p class="form-note" style="margin-top:16px; font-size:13.5px; opacity:0.75;"></p>
+        </form>
+      </div>
+      <div class="reveal">
+        <div class="contact-info-list">
+          <div class="contact-info-item">
+            <svg class="ci-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg>
+            <div><b>Phone</b>083990 14147</div>
+          </div>
+          <div class="contact-info-item">
+            <svg class="ci-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+            <div><b>Email</b>hello@dinterior.in</div>
+          </div>
+          <div class="contact-info-item">
+            <svg class="ci-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><b>Studio Address</b>Chairing Chapor, near welding shop, Basanta Nagar, Dibrugarh, Assam 786001</div>
+          </div>
+        </div>
+        <div class="map-embed">
+          <iframe title="D Interior studio location map" loading="lazy" src="https://www.google.com/maps?q=Basanta+Nagar,+Dibrugarh,+Assam+786001&output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<!-- ================================================================
+     PAGE: PORTFOLIO
+     ================================================================ -->
+<main class="page" id="page-portfolio" data-page="portfolio">
+
+<section class="section--emerald page-header">
+  <div class="container">
+    <span class="eyebrow">Portfolio</span>
+    <h1 class="h-display" style="max-width:20ch;">Real rooms, finished for real Dibrugarh homes.</h1>
+    <p class="lede" style="margin-top:16px;">Filter by room type to see the fit-outs closest to what you have in mind.</p>
+
+    <div class="filter-row">
+      <button class="filter-btn is-active" data-filter="all">All Spaces</button>
+      <button class="filter-btn" data-filter="living-room">Living Room</button>
+      <button class="filter-btn" data-filter="bedroom">Bedroom</button>
+      <button class="filter-btn" data-filter="wardrobes">Wardrobes &amp; Storage</button>
+      <button class="filter-btn" data-filter="kitchen">Kitchen</button>
+      <button class="filter-btn" data-filter="bathroom">Bathroom</button>
+      <button class="filter-btn" data-filter="office">Office Space</button>
+    </div>
+  </div>
+</section>
+
+<section class="section--emerald" style="padding-top:0;">
+  <div class="container">
+    <div class="masonry">
+
+      <div class="masonry-item" data-category="wardrobes"><img src="images/wardrobe-gold-trim.png" alt="Wardrobe with mirrored gold-trim panels"><div class="mi-overlay"><span>Wardrobes &amp; Storage</span></div></div>
+
+      <div class="masonry-item" data-category="living-room"><img src="https://images.unsplash.com/photo-1541194577687-8c63bf9e7ee3?auto=format&fit=crop&w=900&q=80" alt="Dark emerald living room with sectional sofa"><div class="mi-overlay"><span>Living Room</span></div></div>
+
+      <div class="masonry-item" data-category="bedroom"><img src="images/bedroom-teal-arch.png" alt="Bedroom with teal arched headboard and ambient lighting"><div class="mi-overlay"><span>Bedroom</span></div></div>
+
+      <div class="masonry-item" data-category="kitchen"><img src="https://images.unsplash.com/photo-1714860534425-7ce04e013dec?auto=format&fit=crop&w=900&q=80" alt="Kitchen with black cabinetry and white counters"><div class="mi-overlay"><span>Kitchen</span></div></div>
+
+      <div class="masonry-item" data-category="wardrobes"><img src="https://images.unsplash.com/photo-1649361811423-a55616f7ab11?auto=format&fit=crop&w=900&q=80" alt="Walk-in closet filled with clothes"><div class="mi-overlay"><span>Wardrobes &amp; Storage</span></div></div>
+
+      <div class="masonry-item" data-category="bathroom"><img src="https://images.unsplash.com/photo-1749766878223-6ceae855b28b?auto=format&fit=crop&w=900&q=80" alt="Moody dark bathroom with olive accents"><div class="mi-overlay"><span>Bathroom</span></div></div>
+
+      <div class="masonry-item" data-category="bedroom"><img src="images/bedroom-pink-kids.png" alt="Bedroom with blush pink upholstered headboard"><div class="mi-overlay"><span>Bedroom</span></div></div>
+
+      <div class="masonry-item" data-category="office"><img src="https://images.unsplash.com/photo-1611048268330-53de574cae3b?auto=format&fit=crop&w=900&q=80" alt="Home office with wooden table and chairs"><div class="mi-overlay"><span>Office Space</span></div></div>
+
+      <div class="masonry-item" data-category="living-room"><img src="images/livingroom-red-bench.png" alt="Living room with curtains and rust-orange bench seating"><div class="mi-overlay"><span>Living Room</span></div></div>
+
+      <div class="masonry-item" data-category="wardrobes"><img src="https://images.unsplash.com/photo-1643949914877-b20f30792c1e?auto=format&fit=crop&w=900&q=80" alt="Room with bench and fitted cupboards"><div class="mi-overlay"><span>Wardrobes &amp; Storage</span></div></div>
+
+      <div class="masonry-item" data-category="kitchen"><img src="images/kitchen-pink-black.png" alt="Kitchen with pink cabinetry and black countertops"><div class="mi-overlay"><span>Kitchen</span></div></div>
+
+      <div class="masonry-item" data-category="bedroom"><img src="https://images.unsplash.com/photo-1631889993877-71e193bf79b8?auto=format&fit=crop&w=900&q=80" alt="Bedroom with bed and closet"><div class="mi-overlay"><span>Bedroom</span></div></div>
+
+      <div class="masonry-item" data-category="office"><img src="https://images.unsplash.com/photo-1662454419622-a41092ecd245?auto=format&fit=crop&w=900&q=80" alt="Room with television and shelving used as study"><div class="mi-overlay"><span>Office Space</span></div></div>
+
+      <div class="masonry-item" data-category="wardrobes"><img src="images/bedroom-kids-space.png" alt="Kids' bedroom with fitted wardrobe and study desk"><div class="mi-overlay"><span>Wardrobes &amp; Storage</span></div></div>
+
+      <div class="masonry-item" data-category="kitchen"><img src="https://images.unsplash.com/photo-1663811396777-05505d999151?auto=format&fit=crop&w=900&q=80" alt="Kitchen sink and cabinetry detail"><div class="mi-overlay"><span>Kitchen</span></div></div>
+
+      <div class="masonry-item" data-category="living-room"><img src="images/tvunit-marble-gold.png" alt="Living room TV unit with marble and gold detailing"><div class="mi-overlay"><span>Living Room</span></div></div>
+
+      <div class="masonry-item" data-category="living-room"><img src="images/tvunit-wood-grey.png" alt="Compact TV unit with wood panel feature wall"><div class="mi-overlay"><span>Living Room</span></div></div>
+
+      <div class="masonry-item" data-category="wardrobes"><img src="images/vanity-dressing.png" alt="Dressing nook with round mirror and vanity"><div class="mi-overlay"><span>Wardrobes &amp; Storage</span></div></div>
+
+      <div class="masonry-item" data-category="kitchen"><img src="images/kitchen-pink-teal.png" alt="Kitchen with mauve cabinetry and teal tile backsplash"><div class="mi-overlay"><span>Kitchen</span></div></div>
+
+      <div class="masonry-item" data-category="bedroom"><img src="images/bedroom-tan-handover.png" alt="Bedroom with tan upholstered headboard, ready for handover"><div class="mi-overlay"><span>Bedroom</span></div></div>
+
+      <div class="masonry-item" data-category="office"><img src="images/tvunit-black-gold-inprogress.png" alt="Feature wall with fluted black and gold panelling, in progress"><div class="mi-overlay"><span>Office Space</span></div></div>
+
+      <div class="masonry-item" data-category="wardrobes"><img src="images/bedroom-inprogress-blue.png" alt="Bedroom headboard mid-installation"><div class="mi-overlay"><span>Wardrobes &amp; Storage</span></div></div>
+
+      <div class="masonry-item" data-category="wardrobes"><img src="images/partition-foyer.png" alt="Wooden slatted partition with feature shelving"><div class="mi-overlay"><span>Wardrobes &amp; Storage</span></div></div>
+
+      <div class="masonry-item" data-category="kitchen"><img src="images/kitchen-pink-inprogress.png" alt="Kitchen cabinetry mid-installation"><div class="mi-overlay"><span>Kitchen</span></div></div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section section--ivory-warm final-cta">
+  <div class="container">
+    <h2 class="h-display">Have a room in mind like one of these?</h2>
+    <div class="cta-row">
+      <a href="#contact" class="btn btn-mahogany" data-page-link="contact">Get Free Quote</a>
+      <a href="#services" class="btn btn-ghost-light" data-page-link="services">See Our Services</a>
+    </div>
+  </div>
+</section>
+
+</main>
+<!-- ================================================================
+     PAGE: SERVICES
+     ================================================================ -->
+<main class="page" id="page-services" data-page="services">
+
+<section class="section--ivory page-header">
+  <div class="container">
+    <span class="eyebrow" style="color:var(--mahogany);">Services</span>
+    <h1 class="h-display" style="max-width:22ch;">Every service it takes to finish a room properly.</h1>
+    <p class="lede" style="margin-top:16px; color:var(--ink);">Our four core services below, or view every service we offer.</p>
+  </div>
+</section>
+
+<section class="section section--ivory" style="padding-top:20px;">
+  <div class="container">
+    <div class="reveal">
+      <h3 class="h-sub">Our Speciality Services</h3>
+    </div>
+
+    <div class="svc-grid-compact reveal">
+
+      <div class="svc-compact-card">
+        <div class="svc-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 21V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v16"/><path d="M3 21h18"/><path d="M9 21V9h6v12"/></svg></div>
+        <h4>Interior Design</h4>
+        <p>Full-home design concepts, material palettes and layouts tailored to your family and your floor plan.</p>
+      </div>
+
+      <div class="svc-compact-card">
+        <div class="svc-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M12 3v18"/><circle cx="9" cy="12" r=".6" fill="currentColor"/><circle cx="15" cy="12" r=".6" fill="currentColor"/></svg></div>
+        <h4>Wardrobe &amp; Closet Design</h4>
+        <p>Fitted wardrobes in warm wood tones with brushed-gold hardware, planned around what you actually own.</p>
+      </div>
+
+      <div class="svc-compact-card">
+        <div class="svc-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 12h16"/><path d="M5 12V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v5"/><path d="M4 12v7"/><path d="M20 12v7"/></svg></div>
+        <h4>Kitchen Design</h4>
+        <p>Layouts built for how you cook, with cabinetry and storage suited to Assam's humidity and daily use.</p>
+      </div>
+
+      <div class="svc-compact-card">
+        <div class="svc-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="4" width="16" height="12" rx="1"/><path d="M8 20h8"/><path d="M4 10h16"/></svg></div>
+        <h4>Bedroom Design</h4>
+        <p>Headboard frames, storage and lighting composed as one room — not furniture placed after the fact.</p>
+      </div>
+
+      <div class="svc-compact-card">
+        <div class="svc-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 14a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4"/><path d="M6 10V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v4"/><path d="M4 18h16"/></svg></div>
+        <h4>Bathroom Design</h4>
+        <p>Moisture-conscious finishes and fittings that still feel warm and considered, not purely utilitarian.</p>
+      </div>
+
+      <div class="svc-compact-card">
+        <div class="svc-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="7" width="18" height="12" rx="1"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></div>
+        <h4>Commercial Interior Design</h4>
+        <p>Offices, clinics and retail spaces designed to reflect your brand while staying practical to run day to day.</p>
+      </div>
+
+      <div class="svc-compact-card">
+        <div class="svc-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="7" r="3"/><path d="M12 10v10"/><path d="M8 20h8"/></svg></div>
+        <h4>Lighting Design</h4>
+        <p>Layered lighting plans — ambient, task and accent — that give brass and wood finishes room to glow.</p>
+      </div>
+
+      <div class="svc-compact-card">
+        <div class="svc-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 20h18"/><path d="M3 20V9l9-5 9 5v11"/></svg></div>
+        <h4>Flooring Selection</h4>
+        <p>Guidance on wood, tile and stone options that hold up well through Upper Assam's monsoon months.</p>
+      </div>
+
+      <div class="svc-compact-card">
+        <div class="svc-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3v6"/><circle cx="12" cy="13" r="4"/><path d="M8 21h8"/></svg></div>
+        <h4>Home Decor Selection</h4>
+        <p>Soft furnishings, art and accent pieces chosen to finish a room, sourced to fit your budget.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section section--emerald final-cta">
+  <div class="container">
+    <h2 class="h-display">Ready to Transform Your Space?</h2>
+    <div class="cta-row">
+      <a href="#contact" class="btn btn-mahogany" data-page-link="contact">Get Free Quote</a>
+      <a href="#contact" class="btn btn-ghost-light" data-page-link="contact">Book a Free Consultation</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================================================================
+     PAGE: ABOUT
+     ================================================================ -->
+<main class="page" id="page-about" data-page="about">
+
+<section class="section--ivory page-header">
+  <div class="container">
+    <span class="eyebrow" style="color:var(--mahogany);">About D Interior</span>
+    <h1 class="h-display" style="max-width:22ch;">Built in Dibrugarh, for Dibrugarh homes.</h1>
+  </div>
+</section>
+
+<section class="section section--ivory" style="padding-top:20px;">
+  <div class="container">
+    <div class="about-split">
+      <div class="reveal">
+        <span class="eyebrow" style="color:var(--mahogany);">Our Story</span>
+        <h2 class="h-sub">Started with one wardrobe. Grown one referral at a time.</h2>
+        <p class="lede" style="color:var(--ink); margin-top:16px;">D Interior began with fitted wardrobe and closet work for homes around Basanta Nagar, Dibrugarh. Word travelled through happy clients before it travelled through advertising, and the studio grew into full bedroom, kitchen and living-room fit-outs while keeping the same small, hands-on team involved in every project — from the first sketch to the final coat of finish.</p>
+      </div>
+      <div class="about-hero-img reveal">
+        <img src="https://images.unsplash.com/photo-1722349674028-a148f4364e43?auto=format&fit=crop&w=900&q=80" alt="Fitted bedroom wardrobe in warm wood tones">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--ivory-warm">
+  <div class="container">
+    <div class="grid-cards" style="grid-template-columns:1fr 1fr;">
+      <div class="card reveal">
+        <span class="eyebrow" style="color:var(--mahogany);">Vision</span>
+        <h4>Interiors that outlast trends.</h4>
+        <p>To be the studio Upper Assam homeowners trust first — for interiors built on real craftsmanship, not passing styles that need redoing in five years.</p>
+      </div>
+      <div class="card reveal">
+        <span class="eyebrow" style="color:var(--mahogany);">Mission</span>
+        <h4>Understand the home before we design it.</h4>
+        <p>To design and build every wardrobe, bedroom and room fit-out around how the household actually uses it — on time, on budget, and finished to a standard we'd put in our own homes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--ivory">
+  <div class="container">
+    <div class="reveal" style="max-width:640px;">
+      <span class="eyebrow" style="color:var(--mahogany);">Upper Assam, By Design</span>
+      <h2 class="h-sub">Why local context changes the design brief.</h2>
+      <p class="lede" style="color:var(--ink); margin-top:16px;">Dibrugarh's humidity and monsoon season shape real decisions — moisture-resistant carcass materials for wardrobes and kitchens, finishes that don't warp through the wet months, and layouts that work with the tin-roofed and RCC home types common across Upper Assam. Warm wood tones and brass detailing also read particularly well against the tea-garden light this region is known for, which is part of why they anchor our palette.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--ivory-warm">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <span class="eyebrow" style="color:var(--mahogany); justify-content:center;">Company Statistics</span>
+      <h2 class="h-sub">Nine years, one growing studio.</h2>
+    </div>
+    <div class="stat-grid reveal">
+      <div class="stat-box"><b>180+</b><span>Projects Completed</span></div>
+      <div class="stat-box"><b>9</b><span>Years in Dibrugarh</span></div>
+      <div class="stat-box"><b>5.0★</b><span>Client Rating</span></div>
+      <div class="stat-box"><b>100%</b><span>Site-Supervised Builds</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--ivory">
+  <div class="container">
+    <div class="reveal" style="max-width:600px;">
+      <span class="eyebrow" style="color:var(--mahogany);">Our Team</span>
+      <h2 class="h-sub">The people behind each project.</h2>
+    </div>
+    <div class="team-grid reveal">
+      <div class="team-card">
+        <div class="team-photo"><img src="https://images.unsplash.com/photo-1622372738946-62e02505feb3?auto=format&fit=crop&w=500&q=80" alt="D Interior design studio at work on a kitchen fit-out"></div>
+        <h4>Design Team</h4>
+        <span>Concept &amp; Space Planning</span>
+      </div>
+      <div class="team-card">
+        <div class="team-photo"><img src="https://images.unsplash.com/photo-1643949914877-b20f30792c1e?auto=format&fit=crop&w=500&q=80" alt="Carpentry and joinery detail on a fitted cupboard"></div>
+        <h4>Carpentry &amp; Joinery</h4>
+        <span>Fabrication &amp; Fit-Out</span>
+      </div>
+      <div class="team-card">
+        <div class="team-photo"><img src="https://images.unsplash.com/photo-1611048268330-53de574cae3b?auto=format&fit=crop&w=500&q=80" alt="Site supervision and project handover"></div>
+        <h4>Site Supervision</h4>
+        <span>Execution &amp; Handover</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--emerald final-cta">
+  <div class="container">
+    <h2 class="h-display">Start Your Project</h2>
+    <div class="cta-row">
+      <a href="#contact" class="btn btn-mahogany" data-page-link="contact">Get Free Quote</a>
+    </div>
+  </div>
+</section>
+
+</main>
+<!-- ================================================================
+     PAGE: CONTACT
+     ================================================================ -->
+<main class="page" id="page-contact" data-page="contact">
+
+<section class="section--ivory page-header">
+  <div class="container">
+    <span class="eyebrow" style="color:var(--mahogany);">Contact</span>
+    <h1 class="h-display" style="max-width:20ch;">Let's talk about your project.</h1>
+    <p class="lede" style="margin-top:16px; color:var(--ink);">Send us your details and we'll arrange a free site visit — no obligation, no pressure.</p>
+  </div>
+</section>
+
+<section class="section section--ivory" style="padding-top:20px;">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal">
+        <form class="contact-form">
+          <div class="form-field"><label for="c-name">Full Name</label><input id="c-name" type="text" required></div>
+          <div class="form-field"><label for="c-phone">Phone Number</label><input id="c-phone" type="tel" required></div>
+          <div class="form-field"><label for="c-email">Email</label><input id="c-email" type="email"></div>
+          <div class="form-field"><label for="c-room">What are you looking to design?</label>
+            <select id="c-room">
+              <option>Wardrobe / Closet</option>
+              <option>Bedroom</option>
+              <option>Living Room</option>
+              <option>Kitchen</option>
+              <option>Bathroom</option>
+              <option>Full Home</option>
+              <option>Commercial Space</option>
+            </select>
+          </div>
+          <div class="form-field"><label for="c-msg">Project Details</label><textarea id="c-msg" rows="5"></textarea></div>
+          <button type="submit" class="btn btn-mahogany" style="width:100%;">Send Enquiry</button>
+          <p class="form-note" style="margin-top:16px; font-size:13.5px; opacity:0.75;"></p>
+        </form>
+      </div>
+
+      <div class="reveal">
+        <div class="contact-info-list">
+          <div class="contact-info-item">
+            <svg class="ci-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg>
+            <div><b>Phone</b>083990 14147</div>
+          </div>
+          <div class="contact-info-item">
+            <svg class="ci-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+            <div><b>Email</b>hello@dinterior.in</div>
+          </div>
+          <div class="contact-info-item">
+            <svg class="ci-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><b>Studio Address</b>Chairing Chapor, near welding shop, Basanta Nagar, Dibrugarh, Assam 786001</div>
+          </div>
+          <div class="contact-info-item">
+            <svg class="ci-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            <div><b>Business Hours</b>Monday – Saturday, 10:00 AM – 7:00 PM · Sunday by appointment</div>
+          </div>
+        </div>
+        <div class="map-embed">
+          <iframe title="D Interior studio location map" loading="lazy" src="https://www.google.com/maps?q=Basanta+Nagar,+Dibrugarh,+Assam+786001&output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--emerald final-cta">
+  <div class="container">
+    <h2 class="h-display">Prefer to talk it through directly?</h2>
+    <div class="cta-row">
+      <a href="tel:08399014147" class="btn btn-mahogany">Call Now</a>
+      <a href="https://wa.me/918399014147?text=Hi!%20I%20came%20across%20your%20website%20and%20I'm%20interested%20in%20discussing%20an%20interior%20design%20project.%20Could%20you%20please%20provide%20more%20details%3F" class="btn btn-ghost-light" target="_blank" rel="noopener">Message on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER (shared) ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">D<span>&nbsp;Interior</span></div>
+        <p class="small">An interior design studio in Dibrugarh, Assam, building fitted wardrobes and full home interiors around real Upper Assam living.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#home" data-page-link="home">Home</a></li>
+          <li><a href="#portfolio" data-page-link="portfolio">Portfolio</a></li>
+          <li><a href="#services" data-page-link="services">Services</a></li>
+          <li><a href="#about" data-page-link="about">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services" data-page-link="services">Wardrobe Design</a></li>
+          <li><a href="#services" data-page-link="services">Bedroom Design</a></li>
+          <li><a href="#services" data-page-link="services">Kitchen Design</a></li>
+          <li><a href="#services" data-page-link="services">Commercial Interiors</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li>083990 14147</li>
+          <li>hello@dinterior.in</li>
+          <li>Chairing Chapor, near welding shop, Basanta Nagar, Dibrugarh, Assam 786001</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 D Interior. All rights reserved.</span>
+      <span>Designed for homes across Dibrugarh, Assam.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ WHATSAPP FLOAT (shared) ============ -->
+<a class="wa-float" target="_blank" rel="noopener"
+   href="https://wa.me/918399014147?text=Hi!%20I%20came%20across%20your%20website%20and%20I'm%20interested%20in%20discussing%20an%20interior%20design%20project.%20Could%20you%20please%20provide%20more%20details%3F"
+   aria-label="Chat with D Interior on WhatsApp">
+  <span class="wa-tooltip">Chat with us</span>
+  <svg viewBox="0 0 32 32" fill="#fff"><path d="M16 3C9 3 3.4 8.6 3.4 15.6c0 2.6.7 5 2 7.1L3 29l6.5-2.3c2 1.1 4.2 1.7 6.5 1.7 7 0 12.6-5.6 12.6-12.6C28.6 8.6 23 3 16 3zm0 22.9c-2.1 0-4.1-.6-5.8-1.6l-.4-.2-3.9 1.4 1.3-3.8-.3-.4a10.2 10.2 0 0 1-1.6-5.6C5.3 9.7 10 5 16 5s10.7 4.7 10.7 10.6S22 25.9 16 25.9zm5.8-7.9c-.3-.2-1.9-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-2-1.8-2.3-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6-.1-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.1-.3-.2-.6-.3z"/></svg>
+</a>
+
+<!-- ============ LIGHTBOX (shared, used by Portfolio page) ============ -->
+<div class="lightbox">
+  <button class="lightbox-close" aria-label="Close image">✕</button>
+  <button class="lightbox-prev" aria-label="Previous image">←</button>
+  <img src="" alt="Enlarged project photo">
+  <button class="lightbox-next" aria-label="Next image">→</button>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ================================================================
+     PAGE ROUTER
+     One index.html, five "pages" toggled by class + hash.
+     ================================================================ */
+  var pages = document.querySelectorAll('.page');
+  var navLinkEls = document.querySelectorAll('[data-page-link]');
+  var validPages = ['home', 'portfolio', 'services', 'about', 'contact'];
+
+  function showPage(pageName, opts) {
+    opts = opts || {};
+    if (validPages.indexOf(pageName) === -1) pageName = 'home';
+
+    pages.forEach(function (p) {
+      p.classList.toggle('is-active', p.getAttribute('data-page') === pageName);
+    });
+
+    navLinkEls.forEach(function (a) {
+      if (a.classList.contains('nav-links') || a.closest('.nav-links')) {
+        if (a.getAttribute('data-page-link') === pageName) {
+          a.setAttribute('aria-current', 'page');
+        } else {
+          a.removeAttribute('aria-current');
+        }
+      }
+    });
+
+    if (!opts.skipScroll) window.scrollTo({ top: 0, behavior: 'auto' });
+
+    // Optional deep-link into portfolio filter
+    if (pageName === 'portfolio' && opts.category) {
+      var match = document.querySelector('.filter-btn[data-filter="' + opts.category + '"]');
+      if (match) match.click();
+    }
+
+    // Refresh reveal-on-scroll for newly shown page
+    initReveal();
+  }
+
+  navLinkEls.forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var pageName = a.getAttribute('data-page-link');
+      if (!pageName) return;
+      e.preventDefault();
+      var category = a.getAttribute('data-category') || null;
+      window.location.hash = pageName;
+      showPage(pageName, { category: category });
+      // close mobile nav if open
+      var navLinksEl = document.getElementById('navLinks');
+      var burgerEl = document.getElementById('navBurger');
+      if (navLinksEl && navLinksEl.classList.contains('is-open')) {
+        navLinksEl.classList.remove('is-open');
+        if (burgerEl) burgerEl.classList.remove('is-open');
+      }
+    });
+  });
+
+  window.addEventListener('hashchange', function () {
+    var pageName = window.location.hash.replace('#', '') || 'home';
+    showPage(pageName);
+  });
+
+  // Initial page load: respect hash if present
+  var initialPage = window.location.hash.replace('#', '') || 'home';
+  showPage(initialPage, { skipScroll: true });
+
+  /* ---------- Nav: sticky shadow + mobile toggle ---------- */
+  var nav = document.querySelector('.nav');
+  if (nav) {
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('is-scrolled', window.scrollY > 8);
+    });
+  }
+  var burger = document.querySelector('.nav-burger');
+  var navLinks = document.querySelector('.nav-links');
+  if (burger && navLinks) {
+    burger.addEventListener('click', function () {
+      var open = navLinks.classList.toggle('is-open');
+      burger.classList.toggle('is-open', open);
+      burger.setAttribute('aria-expanded', open);
+    });
+  }
+
+  /* ---------- Reveal on scroll ---------- */
+  var io = null;
+  function initReveal() {
+    var reveals = document.querySelectorAll('.reveal:not(.is-visible)');
+    if ('IntersectionObserver' in window && !reduceMotion) {
+      if (!io) {
+        io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+          });
+        }, { threshold: 0.14 });
+      }
+      reveals.forEach(function (el) { io.observe(el); });
+    } else {
+      reveals.forEach(function (el) { el.classList.add('is-visible'); });
+    }
+  }
+  initReveal();
+
+  /* ---------- Before / After: draggable split-handle sliders ---------- */
+  document.querySelectorAll('.ba-slider').forEach(function (slider) {
+    var after = slider.querySelector('.ba-after');
+    var handle = slider.querySelector('.ba-handle');
+    var dragging = false;
+
+    function setPos(clientX) {
+      var rect = slider.getBoundingClientRect();
+      var pct = Math.min(100, Math.max(0, ((clientX - rect.left) / rect.width) * 100));
+      after.style.clipPath = 'inset(0 0 0 ' + pct + '%)';
+      handle.style.left = pct + '%';
+    }
+    handle.addEventListener('pointerdown', function (e) { dragging = true; handle.setPointerCapture(e.pointerId); e.stopPropagation(); });
+    window.addEventListener('pointermove', function (e) { if (dragging) setPos(e.clientX); });
+    window.addEventListener('pointerup', function () { dragging = false; });
+    slider.addEventListener('click', function (e) { if (e.target === handle || handle.contains(e.target)) return; setPos(e.clientX); });
+    handle.addEventListener('keydown', function (e) {
+      var rect = slider.getBoundingClientRect();
+      var current = parseFloat(handle.style.left) || 50;
+      if (e.key === 'ArrowLeft') { setPos(rect.left + rect.width * (current - 4) / 100); }
+      if (e.key === 'ArrowRight') { setPos(rect.left + rect.width * (current + 4) / 100); }
+    });
+  });
+
+  /* ---------- Before / After: swipeable carousel (one room at a time) ---------- */
+  (function () {
+    var carousel = document.getElementById('baCarousel');
+    if (!carousel) return;
+    var track = document.getElementById('baTrack');
+    var slides = Array.prototype.slice.call(track.querySelectorAll('.ba-slide'));
+    var dots = Array.prototype.slice.call(document.querySelectorAll('#baDots .ba-dot'));
+    var prevBtn = carousel.querySelector('.ba-nav-prev');
+    var nextBtn = carousel.querySelector('.ba-nav-next');
+    var current = 0;
+    var scrollTimeout = null;
+
+    function goTo(index, smooth) {
+      index = Math.max(0, Math.min(slides.length - 1, index));
+      current = index;
+      track.scrollTo({ left: slides[index].offsetLeft, behavior: smooth === false ? 'auto' : 'smooth' });
+      updateDots();
+    }
+    function updateDots() {
+      dots.forEach(function (d, i) { d.classList.toggle('is-active', i === current); });
+    }
+    prevBtn.addEventListener('click', function () { goTo(current - 1); });
+    nextBtn.addEventListener('click', function () { goTo(current + 1); });
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () { goTo(i); });
+    });
+
+    // Keep dots in sync when the user swipes/scrolls the track directly
+    track.addEventListener('scroll', function () {
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(function () {
+        var closest = 0;
+        var closestDist = Infinity;
+        slides.forEach(function (s, i) {
+          var dist = Math.abs(s.offsetLeft - track.scrollLeft);
+          if (dist < closestDist) { closestDist = dist; closest = i; }
+        });
+        current = closest;
+        updateDots();
+      }, 100);
+    });
+
+    // Recalculate position on resize (offsets change)
+    window.addEventListener('resize', function () { goTo(current, false); });
+
+    updateDots();
+  })();
+
+  /* ---------- FAQ accordion ---------- */
+  document.querySelectorAll('.faq-item').forEach(function (item) {
+    var q = item.querySelector('.faq-q');
+    var a = item.querySelector('.faq-a');
+    q.addEventListener('click', function () {
+      var isOpen = item.classList.contains('is-open');
+      item.parentElement.querySelectorAll('.faq-item').forEach(function (other) {
+        other.classList.remove('is-open');
+        other.querySelector('.faq-a').style.maxHeight = null;
+        other.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('is-open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+        q.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  /* ---------- Services "Learn more" expand ---------- */
+  document.querySelectorAll('.svc-more-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var card = btn.closest('.svc-card');
+      card.classList.toggle('is-open');
+      btn.textContent = card.classList.contains('is-open') ? 'Show less' : 'Learn more';
+    });
+  });
+
+  /* ---------- Portfolio filter ---------- */
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var galleryItems = document.querySelectorAll('.masonry-item');
+  if (filterBtns.length) {
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        filterBtns.forEach(function (b) { b.classList.remove('is-active'); });
+        btn.classList.add('is-active');
+        var cat = btn.getAttribute('data-filter');
+        galleryItems.forEach(function (item) {
+          var show = cat === 'all' || item.getAttribute('data-category') === cat;
+          item.style.display = show ? '' : 'none';
+        });
+      });
+    });
+  }
+
+  /* ---------- Lightbox ---------- */
+  var lightbox = document.querySelector('.lightbox');
+  if (lightbox) {
+    var lbImg = lightbox.querySelector('img');
+    var visibleItems = function () { return Array.prototype.filter.call(galleryItems, function (i) { return i.style.display !== 'none'; }); };
+    var currentIndex = 0;
+    function openAt(index) {
+      var items = visibleItems();
+      currentIndex = (index + items.length) % items.length;
+      lbImg.src = items[currentIndex].querySelector('img').src;
+      lightbox.classList.add('is-open');
+    }
+    galleryItems.forEach(function (item, idx) {
+      item.addEventListener('click', function () { openAt(visibleItems().indexOf(item)); });
+    });
+    lightbox.querySelector('.lightbox-close').addEventListener('click', function () { lightbox.classList.remove('is-open'); });
+    lightbox.querySelector('.lightbox-prev').addEventListener('click', function () { openAt(currentIndex - 1); });
+    lightbox.querySelector('.lightbox-next').addEventListener('click', function () { openAt(currentIndex + 1); });
+    lightbox.addEventListener('click', function (e) { if (e.target === lightbox) lightbox.classList.remove('is-open'); });
+    document.addEventListener('keydown', function (e) {
+      if (!lightbox.classList.contains('is-open')) return;
+      if (e.key === 'Escape') lightbox.classList.remove('is-open');
+      if (e.key === 'ArrowLeft') openAt(currentIndex - 1);
+      if (e.key === 'ArrowRight') openAt(currentIndex + 1);
+    });
+  }
+
+  /* ---------- Contact forms (static demo, both instances) ---------- */
+  document.querySelectorAll('.contact-form').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var note = form.querySelector('.form-note');
+      if (note) note.textContent = 'Thank you — your enquiry has been received. Our design team will call you within one business day.';
+      form.reset();
+    });
+  });
+});
+</script>
+</body>
+</html>
